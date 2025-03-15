@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'login.dart'; // 로그인 화면 불러오기
+import 'firebase_init.dart'; // Firebase 초기화 클래스
+import 'login.dart'; // 로그인 화면
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await FirebaseInit.instance.initializeFirebase(); // Firebase 초기화
   runApp(CardMateApp());
 }
 
